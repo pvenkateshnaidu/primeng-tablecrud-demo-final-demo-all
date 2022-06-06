@@ -26,11 +26,6 @@ export class AppComponent {
   isRowEditable: Boolean = false;
   isButtonDisabled: Boolean = true;
   products: any[];
-  clonedUsers: {
-    // @ts-ignore
-    [s: string]: User;
-  } = {};
-  programOptions: any[];
 
   constructor(
     private productService: ProductService,
@@ -46,7 +41,6 @@ export class AppComponent {
   getTableData() {
     this.loading = true;
     this.productService.getProducts().then((data) => {
-        console.log(data)
       this.products = data;
       this.loading = false;
       this.isRowEditable = false;
@@ -81,14 +75,12 @@ export class AppComponent {
     });
   }
 
-  onRowEditInit(coverpageinfo: any) {
-    const id: any = coverpageinfo.id;
-    this.clonedUsers[id] = { ...coverpageinfo };
+  onRowEditInit(product: any) {
     this.isRowEditable = true;
   }
 
-  onRowEditCancel(coverpageinfo: any, index: number, table: Table) {
-    if (coverpageinfo.id > 0) {
+  onRowEditCancel(product: any, index: number, table: Table) {
+    if (product.id > 0) {
     } else {
       table.value.splice(index, 1);
     }

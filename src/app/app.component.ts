@@ -8,15 +8,6 @@ import { Table } from 'primeng/table';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [
-    `
-        :host ::ng-deep .p-dialog .product-image {
-            width: 150px;
-            margin: 0 auto 2rem auto;
-            display: block;
-        }
-    `,
-  ],
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {

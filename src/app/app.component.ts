@@ -17,6 +17,7 @@ export class AppComponent {
   isRowEditable: Boolean = false;
   isButtonDisabled: Boolean = true;
   products: any[];
+  isPaginate: boolean = false;
 
   constructor(
     private productService: ProductService,

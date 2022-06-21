@@ -29,6 +29,7 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AddRowDirective } from './add-row.directive';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import { AddRowDirective } from './add-row.directive';
     InputNumberModule,
     ConfirmDialogModule,
     InputTextareaModule,
+    InputSwitchModule,
     RouterModule.forRoot([{ path: '', component: AppComponent }]),
   ],
   declarations: [AppComponent, AddRowDirective],

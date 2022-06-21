@@ -1,10 +1,11 @@
 <div style="width: 100%;">
-  <h2 class="header-color">Products</h2>
+  <h3>Pagination {{ isPaginate ? 'ON' : 'OFF' }}</h3>
+  <p-inputSwitch [(ngModel)]="isPaginate"></p-inputSwitch>
   <div class="card">
     <p-table
       #dt
       [loading]="loading"
-      [paginator]="true"
+      [paginator]="isPaginate"
       [rowsPerPageOptions]="[10, 25, 100, 500]"
       [rows]="10"
       [style]="{ width: '100%' }"
